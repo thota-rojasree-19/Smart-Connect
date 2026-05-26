@@ -13,7 +13,11 @@ export default function GroupChats() {
 
   useEffect(() => {
     async function fetchFriends() {
+<<<<<<< HEAD
       const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/user/current?email=${me}`);
+=======
+      const res = await fetch(`http://localhost:5000/api/user/current?email=${me}`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
       const data = await res.json();
       // data.friends contains objects with email,name
       setFriends(data.friends || []);
@@ -42,7 +46,11 @@ export default function GroupChats() {
       });
     }
 
+<<<<<<< HEAD
     const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/groups/create", {
+=======
+    const res = await fetch("http://localhost:5000/api/groups/create", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
       method: "POST",
       headers: { "Content-Type":"application/json" },
       body: JSON.stringify({ name, adminEmail: me, memberEmails: selected, image: imageBase64 })

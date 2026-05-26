@@ -33,7 +33,11 @@ const ProfileSettings = () => {
         if (!email) return;
 
         const res = await fetch(
+<<<<<<< HEAD
           `https://smart-connect-backend-eu0p.onrender.com/api/user/current?email=${encodeURIComponent(email)}`
+=======
+          `http://localhost:5000/api/user/current?email=${encodeURIComponent(email)}`
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         );
         const data = await res.json();
         if (!res.ok) return;
@@ -75,7 +79,11 @@ const ProfileSettings = () => {
     if (!emailToSend) return alert("No email found");
 
     try {
+<<<<<<< HEAD
       const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/user/update-profile", {
+=======
+      const res = await fetch("http://localhost:5000/api/user/update-profile", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -101,7 +109,11 @@ const ProfileSettings = () => {
       return alert("Please fill in both fields");
 
     try {
+<<<<<<< HEAD
       const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/user/update-password", {
+=======
+      const res = await fetch("http://localhost:5000/api/user/update-password", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -137,7 +149,11 @@ const ProfileSettings = () => {
     formData.append("email", user.email);
 
     try {
+<<<<<<< HEAD
       const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/user/upload-profile-pic", {
+=======
+      const res = await fetch("http://localhost:5000/api/user/upload-profile-pic", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: "PUT",
         body: formData,
       });

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* (removed duplicate .chat-app block) */
 
 /* Ensure the page root allows children to use full viewport height */
@@ -6,6 +7,12 @@
   /* force the chat container to occupy most of the viewport so both columns match */
   height: calc(100vh - 40px) !important;
   min-height: 600px;
+=======
+
+.chat-app {
+  display: flex;
+  height: 90vh;
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
   width: 90%;
   margin: 30px auto;
   border-radius: 16px;
@@ -15,17 +22,21 @@
   font-family: "Poppins", sans-serif;
 }
 
+<<<<<<< HEAD
 /* allow children to use full viewport height */
 html, body, #root {
   height: 100%;
 }
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 .chat-sidebar {
   width: 30%;
   background: #f8f9fa;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   height: 100%; /* match .chat-app height */
   min-height: 0;
   align-self: stretch;
@@ -33,21 +44,30 @@ html, body, #root {
 
 .sidebar-header {
   flex-shrink: 0;
+=======
+}
+
+.sidebar-header {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
   background: #0078ff;
   color: #fff;
+<<<<<<< HEAD
   position: sticky; /* stays visible while scrolling */
   top: 0;
   z-index: 1;
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 }
 
 .friends-list {
   list-style: none;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   overflow-y: auto; /* enable scroll */
   flex: 1 1 auto; /* fill remaining height */
   min-height: 0; /* allow the list to size inside the column flex container */
@@ -67,6 +87,12 @@ html, body, #root {
 }
 
 
+=======
+  overflow-y: auto;
+  flex: 1;
+}
+
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 .friend-item {
   padding: 15px;
   border-bottom: 1px solid #eee;
@@ -148,14 +174,18 @@ html, body, #root {
 
 .chat-input {
   display: flex;
+<<<<<<< HEAD
   flex-direction: column;
   gap: 8px;
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
   padding: 10px;
   position: relative;
   border-top: 1px solid #ddd;
   background: #fafafa;
 }
 
+<<<<<<< HEAD
 .input-row {
   display: flex;
   align-items: center;
@@ -221,6 +251,8 @@ html, body, #root {
 .mic-btn:hover { background: #005fcc; }
 .mic-btn.recording { background: red; }
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 .chat-input input {
   flex: 1;
   padding: 10px 14px;
@@ -795,6 +827,7 @@ html, body, #root {
 .suggestion-btn:active {
   transform: scale(0.98);
 }
+<<<<<<< HEAD
 
 /* Reply preview above the input (WhatsApp-like) */
 .reply-preview {
@@ -900,3 +933,5 @@ html, body, #root {
   margin-right: 8px;
 }
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203

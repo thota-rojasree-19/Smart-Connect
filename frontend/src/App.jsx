@@ -57,7 +57,10 @@ import ProfileSettings from "./pages/ProfileSettings";
 import ChatMessaging from "./pages/ChatMessaging";
 import GroupChats from "./pages/GroupChats";
 import GroupChat from "./pages/GroupChat";
+<<<<<<< HEAD
 import SmartReplies from "./pages/SmartReplies";
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 
 function App() {
   const location = useLocation();
@@ -70,7 +73,10 @@ function App() {
     "/profile-settings",
     "/chat",
     "/groups",          // ✅ hide for group list
+<<<<<<< HEAD
     "/smart-replies",
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
   ];
 
   // Check for dynamic group chat route (e.g., /group/123)
@@ -88,7 +94,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile-settings" element={<ProfileSettings />} />
         <Route path="/chat" element={<ChatMessaging />} />
+<<<<<<< HEAD
         <Route path="/smart-replies" element={<SmartReplies />} />
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         <Route path="/groups" element={<GroupChats />} />
         <Route path="/group/:id" element={<GroupChat />} />
       </Routes>

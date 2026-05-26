@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 // src/pages/Signup.jsx
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -22,6 +25,7 @@ const Signup = () => {
       return;
     }
 
+<<<<<<< HEAD
     // Name validation - only alphabets
     if (!/^[A-Za-z\s]+$/.test(name)) {
       setError("Name should contain only characters");
@@ -29,17 +33,23 @@ const Signup = () => {
     }
 
     // Phone validation
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     if (!/^\d{10}$/.test(phone)) {
       setError("Phone number must be 10 digits");
       return;
     }
 
+<<<<<<< HEAD
     // Email validation
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Invalid email address");
       return;
     }
 
+<<<<<<< HEAD
     // Password validation: uppercase + lowercase + number + special char
     if (
       !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(
@@ -52,11 +62,17 @@ const Signup = () => {
       return;
     }
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     setError("");
     setLoading(true);
 
     try {
+<<<<<<< HEAD
       const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/auth/signup", {
+=======
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, email, password }),

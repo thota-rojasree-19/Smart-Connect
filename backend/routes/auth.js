@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -16,6 +19,7 @@ router.post("/signup", async (req, res) => {
       return res.status(400).json({ message: "Please fill in all fields" });
     }
 
+<<<<<<< HEAD
     // 🔍 Validation: Name (only alphabets)
     if (!/^[A-Za-z\s]+$/.test(name)) {
       return res.status(400).json({ message: "Name should contain only characters" });
@@ -42,13 +46,19 @@ router.post("/signup", async (req, res) => {
       });
     }
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
 
+<<<<<<< HEAD
     // Ensure phone number isn't already used
+=======
+    // Also ensure phone number isn't already used (schema has unique constraint)
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     const existingPhone = await User.findOne({ phone });
     if (existingPhone) {
       return res.status(400).json({ message: "Phone number already registered" });
@@ -71,6 +81,7 @@ router.post("/signup", async (req, res) => {
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
     console.error("Signup error:", err);
+<<<<<<< HEAD
 
     // Handle duplicate key
     if (err && (err.code === 11000 || err.name === "MongoServerError")) {
@@ -79,11 +90,21 @@ router.post("/signup", async (req, res) => {
         .json({ message: "User with provided email or phone already exists" });
     }
 
+=======
+    // Handle duplicate key (race or missed check)
+    if (err && (err.code === 11000 || err.name === "MongoServerError")) {
+      return res.status(400).json({ message: "User with provided email or phone already exists" });
+    }
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     res.status(500).json({ message: "Server error" });
   }
 });
 
+<<<<<<< HEAD
 // ✅ Login route
+=======
+// ✅ Login route (already existing)
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -94,11 +115,15 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
+<<<<<<< HEAD
     const token = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
+=======
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 
     res.json({
       token,
@@ -111,4 +136,7 @@ router.post("/login", async (req, res) => {
 });
 
 export default router;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203

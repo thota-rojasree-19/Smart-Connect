@@ -23,7 +23,11 @@ const Dashboard = () => {
         if (!email) return;
 
         const response = await fetch(
+<<<<<<< HEAD
           `https://smart-connect-backend-eu0p.onrender.com/api/user/current?email=${email}`
+=======
+          `http://localhost:5000/api/user/current?email=${email}`
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         );
 
         if (!response.ok) throw new Error("Failed to fetch user");
@@ -53,7 +57,11 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
+<<<<<<< HEAD
         const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/members");
+=======
+        const res = await fetch("http://localhost:5000/api/members");
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         if (!res.ok) throw new Error("Failed to fetch members");
         setMembers(await res.json());
       } catch (err) {
@@ -85,7 +93,11 @@ const Dashboard = () => {
         .filter((m) => selectedFriends.includes(m._id))
         .map((m) => m.email);
 
+<<<<<<< HEAD
       const response = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/user/add-friends", {
+=======
+      const response = await fetch("http://localhost:5000/api/user/add-friends", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userEmail, friendEmails }),
@@ -122,7 +134,11 @@ const Dashboard = () => {
           let email = sessionStorage.getItem("email");
           if (!email) {
             try {
+<<<<<<< HEAD
               const meRes = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/user/current`);
+=======
+              const meRes = await fetch(`http://localhost:5000/api/user/current`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
               if (meRes.ok) {
                 const meData = await meRes.json();
                 email = meData?.email;
@@ -138,7 +154,11 @@ const Dashboard = () => {
             return navigate("/groups");
           }
 
+<<<<<<< HEAD
           const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/my?email=${encodeURIComponent(email)}`);
+=======
+          const res = await fetch(`http://localhost:5000/api/groups/my?email=${encodeURIComponent(email)}`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
           if (!res.ok) return navigate("/groups");
           const groups = await res.json();
           if (Array.isArray(groups) && groups.length > 0) {
@@ -155,7 +175,11 @@ const Dashboard = () => {
     {
       title: "AI Smart Replies",
       description: "AI suggests intelligent responses",
+<<<<<<< HEAD
       onClick: () => navigate("/smart-replies"),
+=======
+      onClick: () => alert("Navigating to Smart Replies..."),
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     },
     {
       title: "Profile & Settings",

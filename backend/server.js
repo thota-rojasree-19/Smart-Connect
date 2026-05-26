@@ -12,9 +12,13 @@ import membersRoute from "./routes/members.js";
 import userRoute from "./routes/user.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
+<<<<<<< HEAD
 import aiOllamaRoute from "./routes/ai_ollama.js";
 import User from "./models/User.js";
 // import aiSuggestionRoute from "./routes/aiSuggestion.js";
+=======
+import User from "./models/User.js";
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 import groupRoute from "./routes/groupRoutes.js";
 
 // ✅ ES module support
@@ -31,6 +35,7 @@ const PORT = process.env.PORT || 5000;
 // ✅ Create HTTP server for Socket.IO
 const server = createServer(app);
 
+<<<<<<< HEAD
 // const io = new Server(server, {
 //   cors: {
 //     origin: "http://localhost:5173", // ✅ your frontend port
@@ -43,6 +48,11 @@ const server = createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
+=======
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:5173", // ✅ your frontend port
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -153,10 +163,14 @@ io.on("connection", (socket) => {
 
 
 // ✅ Middleware
+<<<<<<< HEAD
 app.use(cors({
   origin: "*",
   credentials: true,
 }));
+=======
+app.use(cors());
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 app.use(express.json());
 
 // ✅ Serve uploaded files
@@ -168,8 +182,11 @@ app.use("/api/user", userRoute);
 app.use("/api/members", membersRoute);
 app.use("/api/user", uploadRoutes);
 app.use("/api/chat", chatRoutes);
+<<<<<<< HEAD
 app.use("/api/ai", aiOllamaRoute);
 // app.use("/api/ai-suggestion", aiSuggestionRoute);
+=======
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
 app.use("/api/groups", groupRoute);
 
 // ✅ MongoDB connection

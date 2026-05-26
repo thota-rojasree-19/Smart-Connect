@@ -27,13 +27,21 @@ export default function GroupChat(){
     const fetchMessages = async () => {
       try {
         setLoading(true);
+<<<<<<< HEAD
         const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}/messages`);
+=======
+        const res = await fetch(`http://localhost:5000/api/groups/${groupId}/messages`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         const data = await res.json();
   setMessages(data || []);
   // after messages load, ensure we scroll to the most recent message
   setTimeout(() => scrollToBottom('auto'), 50);
         try {
+<<<<<<< HEAD
           const infoRes = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}/info`);
+=======
+          const infoRes = await fetch(`http://localhost:5000/api/groups/${groupId}/info`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
           if (infoRes.ok) {
             const info = await infoRes.json();
             setGroupName(info.name || "Group Chat");
@@ -57,7 +65,11 @@ export default function GroupChat(){
     const markSeen = async () => {
       try {
         console.log(`[GroupChat] Marking messages seen for groupId=${groupId}, email=${me}`);
+<<<<<<< HEAD
         const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}/mark-seen`, {
+=======
+        const res = await fetch(`http://localhost:5000/api/groups/${groupId}/mark-seen`, {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: me })
@@ -81,7 +93,11 @@ export default function GroupChat(){
       try {
         const email = sessionStorage.getItem("email");
         if (!email) return;
+<<<<<<< HEAD
         const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/my?email=${encodeURIComponent(email)}`);
+=======
+        const res = await fetch(`http://localhost:5000/api/groups/my?email=${encodeURIComponent(email)}`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         if (!res.ok) return;
         const data = await res.json();
         setGroups(data || []);
@@ -109,7 +125,11 @@ export default function GroupChat(){
       }
       (async () => {
         try {
+<<<<<<< HEAD
           await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}/mark-seen`, {
+=======
+          await fetch(`http://localhost:5000/api/groups/${groupId}/mark-seen`, {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: me })
@@ -154,7 +174,11 @@ export default function GroupChat(){
   // open modal and populate fields
   const openGroupModal = async () => {
     try {
+<<<<<<< HEAD
       const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}/info`);
+=======
+      const res = await fetch(`http://localhost:5000/api/groups/${groupId}/info`);
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
       if (!res.ok) return;
       const info = await res.json();
       setModalName(info.name || "");
@@ -211,7 +235,11 @@ export default function GroupChat(){
   form.append('addMemberEmails', JSON.stringify(addEmails));
   form.append('removeMemberEmails', JSON.stringify(removeEmails));
 
+<<<<<<< HEAD
       const res = await fetch(`https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}/update`, {
+=======
+      const res = await fetch(`http://localhost:5000/api/groups/${groupId}/update`, {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: 'POST',
         body: form
       });
@@ -294,7 +322,11 @@ export default function GroupChat(){
       formData.append("file", file);
     }
     try {
+<<<<<<< HEAD
       const res = await fetch("https://smart-connect-backend-eu0p.onrender.com/api/groups/send", {
+=======
+      const res = await fetch("http://localhost:5000/api/groups/send", {
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
         method: "POST",
         body: formData
       });
@@ -320,7 +352,11 @@ export default function GroupChat(){
   const toAbsolute = (u) => {
     if (!u) return u;
     if (u.startsWith("http://") || u.startsWith("https://")) return u;
+<<<<<<< HEAD
     return `https://smart-connect-backend-eu0p.onrender.com${u}`;
+=======
+    return `http://localhost:5000${u}`;
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
   };
 
   return (
@@ -493,7 +529,11 @@ export default function GroupChat(){
                       try {
                         // send adminEmail as query param to avoid issues where some servers
                         // don't handle DELETE bodies consistently; also handle non-JSON responses
+<<<<<<< HEAD
                         const url = `https://smart-connect-backend-eu0p.onrender.com/api/groups/${groupId}?adminEmail=${encodeURIComponent(me)}`;
+=======
+                        const url = `http://localhost:5000/api/groups/${groupId}?adminEmail=${encodeURIComponent(me)}`;
+>>>>>>> 32152e9e6930315a4cf111cae252faf2df3a9203
                         const res = await fetch(url, { method: 'DELETE' });
                         // Read body as text once, then try to parse JSON. This avoids
                         // "body stream already read" when calling res.json() then res.text().
