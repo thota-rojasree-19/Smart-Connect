@@ -42,7 +42,7 @@ const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://smart-connect-gules.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -153,10 +153,12 @@ io.on("connection", (socket) => {
 
 
 // ✅ Middleware
-app.use(cors({
-  origin: "*",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: "https://smart-connect-gules.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // ✅ Serve uploaded files
