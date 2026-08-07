@@ -96,3 +96,7 @@ BACKEND_PORT=5000
 MONGO_URI=mongodb+srv://your-connection-string
 JWT_SECRET=your_jwt_secret_key
 UPLOAD_DIR=uploads
+
+SmartConnect Chat Application
+
+🌐 https://smart-connect-gules.vercel.app
